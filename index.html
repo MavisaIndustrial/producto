@@ -25,10 +25,16 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search);
     let costoventa = parseFloat(urlParams.get('costoventa'));
+    let fecha = urlParams.get('fecha');
+    let fechaObj = new Date(fecha);
+    let fechaFormateada = (fechaObj.getDate()).toString().padStart(2, '0') + '/' + 
+                      (fechaObj.getMonth() + 1).toString().padStart(2, '0') + '/' + 
+                      fechaObj.getFullYear();
+    
     costoventa = costoventa.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     document.getElementById('producto_id').textContent = urlParams.get('id');
     document.getElementById('nombre').textContent = urlParams.get('nombre');
-    document.getElementById('fecha').textContent = urlParams.get('fecha');
+    document.getElementById('fecha').textContent = fechaFormateada;
     document.getElementById('proveedor').textContent = urlParams.get('proveedor');
     document.getElementById('costoventa').textContent = costoventa;
     document.getElementById('existencias').textContent = urlParams.get('existencias');
