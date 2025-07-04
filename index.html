@@ -24,11 +24,13 @@
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
+    let costoventa = parseFloat(urlParams.get('costoventa'));
+    costoventa = costoventa.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     document.getElementById('producto_id').textContent = urlParams.get('id');
     document.getElementById('nombre').textContent = urlParams.get('nombre');
     document.getElementById('fecha').textContent = urlParams.get('fecha');
     document.getElementById('proveedor').textContent = urlParams.get('proveedor');
-    document.getElementById('costoventa').textContent = urlParams.get('costoventa');
+    document.getElementById('costoventa').textContent = costoventa;
     document.getElementById('existencias').textContent = urlParams.get('existencias');
 </script>
 </body>
