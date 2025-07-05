@@ -33,6 +33,7 @@
                       fechaObj.getFullYear();
     
     costoventa = costoventa.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    costounitario = costounitario.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
     document.getElementById('producto_id').textContent = urlParams.get('id');
     document.getElementById('nombre').textContent = urlParams.get('nombre');
     document.getElementById('fecha').textContent = fechaFormateada;
